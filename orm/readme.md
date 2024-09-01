@@ -1,0 +1,1 @@
+https://djangocentral.com/django-orm-cheatsheet/
