@@ -89,6 +89,22 @@ Ativar poetry a cada trabalho
 poetry shell
 ```
 
+## Linux - old
+```
+$ mkdir project_name
+$ cd project_name
+$ python -m venv venv
+$ source ./venv/bin/activate
+$ pip install django
+$ django-admin --version
+$ django-admin startproject project .
+$ python manager.py migrate
+$ python manager.py createsuperuser
+$ python manager.py runserver <ip_local>:8000
+$ cd project
+$ python manager.py startapp app1
+```
+
 ### VSCode
 Instale as seguintes extensões:
 
