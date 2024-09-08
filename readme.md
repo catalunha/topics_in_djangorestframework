@@ -89,6 +89,13 @@ Ativar poetry a cada trabalho
 poetry shell
 ```
 
+Executar um comando lendo o ambiente do poetry
+```
+poetry run <comando>
+```
+
+
+
 ## Linux - old
 ```
 $ mkdir project_name
