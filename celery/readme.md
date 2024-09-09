@@ -1,5 +1,5 @@
 
-# Celery
+# Celery com redis
 
 
 # PyCodeBR
@@ -13,3 +13,5 @@ Detalhes em: celery/celery_1
 https://youtu.be/IBAff6euF64
 Detalhes em: celery/celery_2
 
+Este projeto esta neste repositorio:
+https://github.com/catalunha/celery_redis_1.git

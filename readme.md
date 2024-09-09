@@ -13,8 +13,9 @@ Mas é importante consultar a documentação original da linguagem em:
 
 # Sumário dos tópicos
 
-0. ([select_related](select_related/readme.md)) select_related
-0. ([prefetch_related](prefetch_related/readme.md)) prefetch_related
+1. ([select_related](select_related/readme.md)) select_related
+1. ([prefetch_related](prefetch_related/readme.md)) prefetch_related
+1. [Celery, redis, django](celery/celery_django_1/readme.md)
 
 Meu Script para criar pasta
 ```
@@ -97,6 +98,7 @@ poetry run <comando>
 
 
 ## Linux - old
+Criando ambiente sem utilizar poetry
 ```
 $ mkdir project_name
 $ cd project_name
@@ -112,25 +114,59 @@ $ cd project
 $ python manager.py startapp app1
 ```
 
-### VSCode
+## VSCode
 Instale as seguintes extensões:
 
 ![](images/extensions.png)
 
 
 # Criando projeto DjangoRF
-
+Na pasta do projeto digite, para iniciar ambiente virtual
+```
+poetry shell
+```
 ## Criando projeto
 
 Estando em uma pasta qualquer
 ```
-django-admin startproject backend .
+django-admin startproject app .
 ```
 ## Criando apps
+Sempre criar apps internos no app
 ```
-cd backend
+cd app
 django-admin startapp users
 django-admin startapp core
+django-admin startapp app1
+```
+
+## Cadatrando app no settings
+Antes, mudar o app.apps.py de:
+```py
+from django.apps import AppConfig
+
+
+class App1Config(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "app1"
+```
+para
+```py
+from django.apps import AppConfig
+
+
+class App1Config(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "app.app1"
+```
+E depois cadastrar no INSTALLED_APPS com
+
+```
+INSTALLED_APPS = [
+    "app.users.UsersConfig",
+    "app.core.CoreConfig",
+    "app.app1.App1Config",
+]
 ```
 
 ## Iniciar banco de dados
@@ -143,7 +179,7 @@ python manage.py makemigrations; python manage.py migrate
 ```
 python manage.py createsuperuser
 ```
-Sugestão de emai e senha é:
+Sugestão de email e senha é:
 username/email: admin@django.com
 senha: drf@10
 
