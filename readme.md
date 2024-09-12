@@ -10,6 +10,7 @@ Mas é importante consultar a documentação original da linguagem em:
 0. https://www.w3schools.com/django/
 0. https://www.geeksforgeeks.org/django-tutorial/
 0. https://www.tutorialspoint.com/django/index.htm
+0. https://learndjango.com/tutorials/
 
 # Sumário dos tópicos
 
