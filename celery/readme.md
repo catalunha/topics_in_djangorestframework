@@ -15,3 +15,7 @@ Detalhes em: celery/celery_2
 
 Este projeto esta neste repositorio:
 https://github.com/catalunha/celery_redis_1.git
+
+
+Outros tutorais:
+* https://blog.stackademic.com/dockerized-celery-rabbitmq-django-complex-example-420f4033613d
