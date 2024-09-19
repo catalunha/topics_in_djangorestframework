@@ -27,15 +27,20 @@ mkdir input; cd input; touch readme.md; touch code_1.py; cd ..
 
 
 ## Linux
-Ou instalar o ambiente localmente. Para Linux segue meu roteiro.
+Para Linux segue meu roteiro.
+
+Crie uma pasta para o projeto de sua API com djangoRestFramework, e acesse esta pasta
+```
+mkdir project_name
+cd project_name
+```
 
 Verificar se o python 3.12 esta ativo
 ```
-  pyenv versions
+pyenv versions
 ```
 
 Se nao estiver instalado, então instalar com 
-
 ```
 pyenv install 3.12.0
 ```
@@ -44,13 +49,15 @@ Marcar como o compilador local
 ```
 pyenv local 3.12.0
 ```
-Instalar poetry com 
+
+Iniciar o poetry
 ```
 poetry init
 
 Would you like... no
 Would you like... no
 ```
+
 Conferindo se a pasta .venv foi criada. Senão verifique estas configs
 ```
 poetry config --list
@@ -130,12 +137,12 @@ poetry shell
 
 Estando em uma pasta qualquer
 ```
-django-admin startproject app .
+django-admin startproject django_project .
 ```
 ## Criando apps
-Sempre criar apps internos no app
+Sempre criar apps internos no django_project
 ```
-cd app
+cd django_project
 django-admin startapp users
 django-admin startapp core
 django-admin startapp app1
