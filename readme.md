@@ -103,7 +103,7 @@ Executar um comando lendo o ambiente do poetry
 poetry run <comando>
 ```
 
-
+anotacao
 
 ## Linux - old
 Criando ambiente sem utilizar poetry
