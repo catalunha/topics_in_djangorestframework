@@ -171,9 +171,9 @@ E depois cadastrar no INSTALLED_APPS com
 
 ```
 INSTALLED_APPS = [
-    "app.users.UsersConfig",
-    "app.core.CoreConfig",
-    "app.app1.App1Config",
+    "app.users.apps.UsersConfig",
+    "app.core.apps.CoreConfig",
+    "app.app1.apps.App1Config",
 ]
 ```
 
