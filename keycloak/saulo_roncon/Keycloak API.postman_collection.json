@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "4cd1c254-19d2-4fb9-a243-35acbcb30b71",
+		"name": "Keycloak API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37032397",
+		"_collection_link": "https://dark-escape-579543.postman.co/workspace/Troca-Pontos~dd7b7d79-ea76-4bbd-b93d-25d3d2bfff87/collection/37032397-4cd1c254-19d2-4fb9-a243-35acbcb30b71?action=share&source=collection_link&creator=37032397"
+	},
+	"item": [
+		{
+			"name": "Get Admin Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "admin-cli",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8087/realms/master/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"realms",
+						"master",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"novo_usuario\",\"enabled\":true,\"email\":\"usuario@exemplo.com\",\"firstName\":\"Primeiro\",\"lastName\":\"Último\",\"credentials\":[{\"type\":\"password\",\"value\":\"senha123\",\"temporary\":false}]}"
+				},
+				"url": {
+					"raw": "http://localhost:8087/admin/realms/{{realm}}/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"admin",
+						"realms",
+						"{{realm}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8087/admin/realms/{{realm}}/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"admin",
+						"realms",
+						"{{realm}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"novo_grupo\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8087/admin/realms/{{realm}}/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"admin",
+						"realms",
+						"{{realm}}",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"nova_role\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8087/admin/realms/{{realm}}/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"admin",
+						"realms",
+						"{{realm}}",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "realm",
+			"value": "userA"
+		},
+		{
+			"key": "token",
+			"value": "initial"
+		}
+	]
+}

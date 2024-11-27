@@ -17,3 +17,13 @@ https://learndjango.com/tutorials/pre-commit-django
 * https://docs.pytest.org/en/stable/how-to/index.html
 * https://docs.pytest.org/en/6.2.x/customize.html
 * https://pytest-django.readthedocs.io/en/latest/tutorial.html
+
+
+# Visualizando print
+
+pytest -rP
+pytest -v
+pytest -s
+
+# buscando teste especifico
+pytest -k 'nome da def do test'
