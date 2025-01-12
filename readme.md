@@ -217,3 +217,41 @@ senha atual da conta admin@gmail.com é: django@123
 ## aplicar migrações
 (nomeDoProjeto-py3.12) catalunha@pop-os:~/.../pastaDoProjeto$
 python manage.py makemigrations; python manage.py migrate
+
+
+
+# Usando uv
+
+```
+folder-project$ uv python pin 3.12
+Pinned `.python-version` to `3.12`
+folder-project$ uv venv
+Using CPython 3.12.0
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+folder-project$ uv init
+Initialized project `folder-project`
+folder-project$ source .venv/bin/activate
+(folder-project) folder-project$ python hello.py 
+Hello from folder-project!
+(folder-project) folder-project$ uv add django
+
+uv add boto3
+uv add dj-database-url
+uv add django
+uv add django-cors-headers
+uv add django-debug-toolbar
+uv add django-filter
+uv add django-imagekit
+uv add django-storages[s3]
+uv add djangorestframework
+uv add djangorestframework-simplejwt
+uv add drf-spectacular
+uv add gunicorn
+uv add mailtrap
+uv add pillow
+uv add psycopg2-binary
+uv add python-decouple
+uv add requests
+```
+
