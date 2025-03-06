@@ -49,6 +49,9 @@ Marcar como o compilador local
 ```
 pyenv local 3.12.0
 ```
+Fixar a versão do python na venv
+poetry env use python3.11
+
 
 Iniciar o poetry
 ```
@@ -145,8 +148,13 @@ Sempre criar apps internos no django_project
 cd django_project
 django-admin startapp users
 django-admin startapp core
+```
+
+Os demais apps são de acordo com o projeto.
+```
 django-admin startapp app1
 ```
+
 
 ## Cadatrando app no settings
 Antes, mudar o app.apps.py de:
@@ -236,22 +244,29 @@ folder-project$ source .venv/bin/activate
 Hello from folder-project!
 (folder-project) folder-project$ uv add django
 
+
 uv add boto3
 uv add dj-database-url
 uv add django
 uv add django-cors-headers
-uv add django-debug-toolbar
 uv add django-filter
 uv add django-imagekit
 uv add django-storages[s3]
 uv add djangorestframework
 uv add djangorestframework-simplejwt
-uv add drf-spectacular
 uv add gunicorn
-uv add mailtrap
 uv add pillow
 uv add psycopg2-binary
 uv add python-decouple
 uv add requests
 ```
 
+
+```
+uv add drf-spectacular
+uv add django-debug-toolbar
+uv add mailtrap
+```
+
+
+Se o project ja existir use uv sync para pegar os packages do pyproject e recriar o pylock
